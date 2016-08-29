@@ -96,8 +96,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener
         * 使用(ListFragment)getSupportFragmentManager().findFragmentById(R.id.userList)
         * 获得需要继承android.support.v4.app.FragmentActivity
         */
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
+        FragmentManager fragmentManager01 = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager01.beginTransaction();
         hideFragment(transaction);
         // 把图片设置为亮的
         // 设置内容区域
