@@ -1,6 +1,7 @@
 package com.bjfu.it.ye6hao.tabfragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,7 +13,10 @@ import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-public class MainActivity extends FragmentActivity implements OnClickListener
+
+
+public class MainActivity extends FragmentActivity
+        implements OnClickListener
 {
     private LinearLayout mTabWeixin;
     private LinearLayout mTabFrd;
@@ -96,18 +100,33 @@ public class MainActivity extends FragmentActivity implements OnClickListener
         * 使用(ListFragment)getSupportFragmentManager().findFragmentById(R.id.userList)
         * 获得需要继承android.support.v4.app.FragmentActivity
         */
-        FragmentManager fragmentManager01 = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager01.beginTransaction();
+
+
+        //FragmentManager管理所有的Fragment
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+
+
+        //隐藏所有的transaction中的tab
         hideFragment(transaction);
+
         // 把图片设置为亮的
         // 设置内容区域
         switch (i)
         {
             case 0:
                 if (mTab01 == null) {
+
+
                     mTab01 = new WeixinFragment();
-                    transaction.add(R.id.id_content, mTab01);
+
+
+                    //添加微信到Activity中
+                    transaction.add(R.id.id_content, mTab01,"weixin_main_fragment");
+
+
                 } else {
+                    //不为空显示出来
                     transaction.show(mTab01);
                 }
                 mImgWeixin.setImageResource(R.drawable.tab_weixin_pressed);
@@ -182,5 +201,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener
         mImgAddress.setImageResource(R.drawable.tab_address_normal);
         mImgSettings.setImageResource(R.drawable.tab_settings_normal);
     }
+
+
+
+
 
 }

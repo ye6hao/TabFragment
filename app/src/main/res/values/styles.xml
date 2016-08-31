@@ -20,8 +20,8 @@
     <style name="MyTheme" parent="AppBaseTheme">
         <item name="vpiTabPageIndicatorStyle">@style/MyWidget.TabPageIndicator</item>
 
-        <!--背景图片，为何一直存在，上面的图层没有将其覆盖？？？？-->
-        <item name="android:windowBackground">@drawable/init_pic</item>
+        <!--背景图片，为何一直存在，上面的图层没有颜色，将会暴露出来？？？？-->
+        <!--<item name="android:windowBackground">@drawable/init_pic</item>-->
 
 
         <item name="android:windowNoTitle">true</item>

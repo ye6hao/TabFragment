@@ -1,4 +1,4 @@
-package com.bjfu.it.ye6hao.tabfragment.weixin;
+package com.bjfu.it.ye6hao.tabfragment.news;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,10 +14,14 @@ public class TabAdapter extends FragmentPagerAdapter
 		super(fm);
 	}
 
+	/**
+	 * 初始化标题
+	 */
 	@Override
-	public Fragment getItem(int arg0)
+	public Fragment getItem(int position)
 	{
-		MainFragment fragment = new MainFragment(arg0);
+		NewsTitleFragment fragment = new NewsTitleFragment(position);
+
 		return fragment;
 	}
 
